@@ -6,6 +6,8 @@ const Alexa = require('ask-sdk-core');
 //skill name 
 const appName = 'BYU Idaho';
 
+// something
+
 //code for intent handlers
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
