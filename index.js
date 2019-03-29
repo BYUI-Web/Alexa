@@ -58,7 +58,7 @@ const RegistrationDateHandler = {
     let winterregistrationDeadlines = ["January 14", "March 6"];
     let springRegistrationDeadlines = ["April 29", "June 13"];
     let summerRegistrationDeadlines = ["August 5"];
-    let fallRegistrationDeadlines = ["September 23". "November 6"];
+    let fallRegistrationDeadlines = ["September 23", "November 6"];
     //logic for this handler
     if (Semester === 'winter') {
 //logic for winter
@@ -213,7 +213,7 @@ const MoveInDateHandler = {
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        speechText = 'The First Block move in date is ' winterMoveInDate[0];
+        speechText = 'The First Block move in date is ' + winterMoveInDate[0];
         displayText = 'The move-in date is ' + winterMoveInDate[0];
       }
       else if (SemesterType === 'second Block') {
@@ -311,7 +311,7 @@ const FirstDayOfClassHandler = {
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        speechText = 'First Block classes begin ' winterFirstDay[0];
+        speechText = 'First Block classes begin ' + winterFirstDay[0];
         displayText = 'The First day of classes begin ' + winterFirstDay[0];
       }
       else if (SemesterType === 'second Block') {
@@ -409,7 +409,7 @@ const DropClassDateHandler = {
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        speechText = 'The First Block deadline to drop classes is ' winterDropDate[1];
+        speechText = 'The First Block deadline to drop classes is ' + winterDropDate[1];
         displayText = 'The deadline to drop classes is ' + winterDropDate[1];
       }
       else if (SemesterType === 'second Block') {
@@ -507,7 +507,7 @@ const WithdrawDateHandler = {
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        speechText = 'The First Block deadline to withdraw from classes is ' winterWithdrawDate[1];
+        speechText = 'The First Block deadline to withdraw from classes is ' + winterWithdrawDate[1];
         displayText = 'The deadline to withdraw from classes is ' + winterWithdrawDate[1];
       }
       else if (SemesterType === 'second Block') {
@@ -599,30 +599,18 @@ const GraduationDateHandler = {
 //logic for winter
         speechText = 'Winter graduation is ' + winterCommDate[0];
         displayText = 'Graduation is ' + winterDropDate[0];
-    } else {
-      return handlerInput.responseBuilder
-      .assDelegateDirective(intent)
-      .getResponse();
-    }
+    } 
     else if (Semester === 'spring') {
 //logic for Spring
          speechText = 'Spring graduation is ' + springDropDate[0];
          displayText = 'Graduation is ' + springDropDate[0];
 
-     } else {
-       return handlerInput.responseBuilder
-       .assDelegateDirective(intent)
-       .getResponse();
      }
     else if (Semester === 'summer'){
       //logic for Summer
          speechText = 'Summer session does not have a graduation ceremony.';
          displayText = 'Summer session does not have a graduation ceremony.';
-       } else {
-         return handlerInput.responseBuilder
-         .assDelegateDirective(intent)
-         .getResponse();
-       }
+       } 
     else if (Semester === 'fall') {
       //logic for fall
          speechText = 'Fall graduation is ' + fallDropDate[0];
@@ -655,30 +643,17 @@ const CommencementDateHandler = {
 //logic for winter
         speechText = 'Winter commencement is ' + winterCommDate[0];
         displayText = 'Commencement is ' + winterDropDate[0];
-    } else {
-      return handlerInput.responseBuilder
-      .assDelegateDirective(intent)
-      .getResponse();
-    }
+    } 
     else if (Semester === 'spring') {
 //logic for Spring
          speechText = 'Spring Commencement is ' + springDropDate[0];
          displayText = 'Commencement is ' + springDropDate[0];
-
-     } else {
-       return handlerInput.responseBuilder
-       .assDelegateDirective(intent)
-       .getResponse();
      }
     else if (Semester === 'summer'){
       //logic for Summer
          speechText = 'Summer session does not have a Commencement ceremony.';
          displayText = 'Summer session does not have a Commencement ceremony.';
-       } else {
-         return handlerInput.responseBuilder
-         .assDelegateDirective(intent)
-         .getResponse();
-       }
+       } 
     else if (Semester === 'fall') {
       //logic for fall
          speechText = 'Fall Commencement is ' + fallDropDate[0];
