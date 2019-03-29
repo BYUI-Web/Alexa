@@ -1,0 +1,21 @@
+{
+  "name": "alexa",
+  "version": "1.0.0",
+  "description": "BYU-Idaho Student Help Alexa Skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Alexa",
+    "Student",
+    "Help"
+  ],
+  "author": "Stuart Pennington",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk-core": "^2.5.1",
+    "ask-sdk-model": "^1.13.0",
+    "git": "^0.1.5"
+  }
+}

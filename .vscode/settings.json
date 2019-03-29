@@ -1,0 +1,4 @@
+{
+    "git.checkoutType": "remote",
+    "git.defaultCloneDirectory": "https://github.com/PenningtonStuart/Alexa.git"
+}

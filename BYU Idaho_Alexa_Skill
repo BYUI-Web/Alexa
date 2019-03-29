@@ -1,0 +1,224 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "byu idaho",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ErefundIntent",
+                    "slots": [],
+                    "samples": [
+                        "Can I cancel my eRefund",
+                        "Do I have to use eRefund",
+                        "How do I get my Federal Aid",
+                        "How do I sign up for eRefund",
+                        "When will I get my eRefund",
+                        "When will I get my refund",
+                        "What is eRefund"
+                    ]
+                },
+                {
+                    "name": "RegistrationIntent",
+                    "slots": [],
+                    "samples": [
+                        "Where can i find registration information",
+                        "Where can I register for classes",
+                        "How can I register",
+                        "How do I register for classes"
+                    ]
+                },
+                {
+                    "name": "HousingIntnet",
+                    "slots": [
+                        {
+                            "name": "MaritalStatus",
+                            "type": "MaritalStatus"
+                        }
+                    ],
+                    "samples": [
+                        "Where can I find approved housing",
+                        "What apartments are approved housing"
+                    ]
+                },
+                {
+                    "name": "ActivitiesIntent",
+                    "slots": [],
+                    "samples": [
+                        "Where can I find things to do",
+                        "What is going on tonight",
+                        "What events are happening at BYU Idaho",
+                        "What activites are there in Rexburg",
+                        "What is there to do In Rexburg"
+                    ]
+                },
+                {
+                    "name": "AcademicDeadlinesIntent",
+                    "slots": [
+                        {
+                            "name": "semester",
+                            "type": "Semester"
+                        },
+                        {
+                            "name": "semesterType",
+                            "type": "SemesterType"
+                        }
+                    ],
+                    "samples": [
+                        "When is the last day to withdraw from classes",
+                        "When is the move-in day",
+                        "When is the registration deadline",
+                        "When is Commencement",
+                        "When is Graduation",
+                        "When is the withdrawal deadline",
+                        "When is the last day to drop a class",
+                        "When is the first day of class"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "MaritalStatus",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Widoer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Widow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Widowed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Not married"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Unmarried"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Single"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Married"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Semester",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Fall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Summer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Spring"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Winter"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SemesterType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Second Block"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "First Block"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Full Semester"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ErefundIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": []
+                },
+                {
+                    "name": "HousingIntnet",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "MaritalStatus",
+                            "type": "MaritalStatus",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.27220141006.1190201459625"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.27220141006.1190201459625",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is your marital status?"
+                    }
+                ]
+            }
+        ]
+    }
+}
