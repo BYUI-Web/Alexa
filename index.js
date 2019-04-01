@@ -30,7 +30,7 @@ const LaunchRequestHandler = {
 //custom handlers
 const ERefundHandler = {
   canHandle(handlerInput) {
-    retrun handlerInput.requestEnvelope.request.type === 'IntentHandler'
+    return handlerInput.requestEnvelope.request.type === 'IntentHandler'
         && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent'
   },
   handle(handlerInput) {
