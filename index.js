@@ -591,30 +591,24 @@ const GraduationDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
 
-    let winterCommDate = ['April 12'];
-    let springCommDate = ['July 23'];
-    let summerCommDate = [''];
-    let fallCommDate = ['December 18'];
+    let winterGradDate = ['April 12'];
+    let springGradDate = ['July 23'];
+    let fallGradDate = ['December 18'];
     if (Semester === 'winter') {
 //logic for winter
-        speechText = 'Winter graduation is ' + winterCommDate[0];
-        displayText = 'Graduation is ' + winterDropDate[0];
+        speechText = 'Winter graduation is ' + winterGradDate[0];
+        displayText = 'Graduation is ' + winterGradDate[0];
     } 
     else if (Semester === 'spring') {
 //logic for Spring
-         speechText = 'Spring graduation is ' + springDropDate[0];
-         displayText = 'Graduation is ' + springDropDate[0];
+         speechText = 'Spring graduation is ' + springGradDate[0];
+         displayText = 'Graduation is ' + springGradDate[0];
 
      }
-    else if (Semester === 'summer'){
-      //logic for Summer
-         speechText = 'Summer session does not have a graduation ceremony.';
-         displayText = 'Summer session does not have a graduation ceremony.';
-       } 
     else if (Semester === 'fall') {
       //logic for fall
-         speechText = 'Fall graduation is ' + fallDropDate[0];
-         displayText = 'Graduation is ' + fallDropDate[0];
+         speechText = 'Fall graduation is ' + fallGradDate[0];
+         displayText = 'Graduation is ' + fallGradDate[0];
      } else {
       //ask for required input
       return handlerInput.responseBuilder
