@@ -2,6 +2,7 @@
 
 //version number
 let version = '1.2 Alpha';
+
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
 
