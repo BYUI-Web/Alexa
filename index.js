@@ -37,8 +37,15 @@ const ERefundHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent'
   },
   handle(handlerInput) {
+    let speechText = '';
+    let displayText = '';
     let intent = handlerInput.requestEnvelope.request.intent;
     //there are no slots for this handler.
+    return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .withSimpleCard(appName, displayText)
+        .getResponse();
   }
 };
 
@@ -49,6 +56,8 @@ const RegistrationDateHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'RegistrationIntent'
   },
   handle(handlerInput) {
+    let speechText = '';
+    let displayText = '';
     let intent = handlerInput.requestEnvelope.request.intent;
     let Semester = intnet.slots.Semester.value;
     let SemesterType = intent.slots.Semester.value;
@@ -293,8 +302,7 @@ const FirstDayOfClassHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+
 
     let winterFirstDay = ['January 7', 'Febuary 27'];
     let springFirstDay = ['April 22', 'June 6'];
@@ -390,8 +398,6 @@ const DropClassDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
 
     let winterDropDate = ['January 29', 'January 22', 'March 14'];
     let springDropDate = ['May 14', 'May 7', 'June 21'];
@@ -488,8 +494,6 @@ const WithdrawDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
 
     let winterWithdrawDate = ['March 4', 'Febuary 4', 'March 25'];
     let springWithdrawDate = ['June 17', 'May 22', 'July 2'];
@@ -586,20 +590,20 @@ const GraduationDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
 
-    let winterGradDate = ['April 12'];
-    let springGradDate = ['July 23'];
-    let fallGradDate = ['December 18'];
+    let winterCommDate = ['April 12'];
+    let springCommDate = ['July 23'];
+    let summerCommDate = [''];
+    let fallCommDate = ['December 18'];
     if (Semester === 'winter') {
 //logic for winter
-        speechText = 'Winter graduation is ' + winterGradDate[0];
-        displayText = 'Graduation is ' + winterGradDate[0];
+        speechText = 'Winter graduation is ' + winterCommDate[0];
+        displayText = 'Graduation is ' + winterDropDate[0];
     } 
     else if (Semester === 'spring') {
 //logic for Spring
-         speechText = 'Spring graduation is ' + springGradDate[0];
-         displayText = 'Graduation is ' + springGradDate[0];
+         speechText = 'Spring graduation is ' + springDropDate[0];
+         displayText = 'Graduation is ' + springDropDate[0];
 
      }
     else if (Semester === 'summer'){
@@ -609,8 +613,8 @@ const GraduationDateHandler = {
        } 
     else if (Semester === 'fall') {
       //logic for fall
-         speechText = 'Fall graduation is ' + fallGradDate[0];
-         displayText = 'Graduation is ' + fallGradDate[0];
+         speechText = 'Fall graduation is ' + fallDropDate[0];
+         displayText = 'Graduation is ' + fallDropDate[0];
      } else {
       //ask for required input
       return handlerInput.responseBuilder
@@ -627,21 +631,23 @@ const CommencementDateHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
   },
   handle(handlerInput) {
+    let speechText = '';
+    let displayText = '';
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
 
     let winterCommDate = ['April 12'];
     let springCommDate = ['July 23'];
+    let summerCommDate = [''];
     let fallCommDate = ['December 18'];
     if (Semester === 'winter') {
 //logic for winter
         speechText = 'Winter commencement is ' + winterCommDate[0];
-        displayText = 'Commencement is ' + winterCommpDate[0];
+        displayText = 'Commencement is ' + winterDropDate[0];
     } 
     else if (Semester === 'spring') {
 //logic for Spring
-         speechText = 'Spring Commencement is ' + springCommDate[0];
-         displayText = 'Commencement is ' + springCommDate[0];
+         speechText = 'Spring Commencement is ' + springDropDate[0];
+         displayText = 'Commencement is ' + springDropDate[0];
      }
     else if (Semester === 'summer'){
       //logic for Summer
@@ -650,8 +656,8 @@ const CommencementDateHandler = {
        } 
     else if (Semester === 'fall') {
       //logic for fall
-         speechText = 'Fall Commencement is ' + fallCommDate[0];
-         displayText = 'Commencement is ' + fallCommDate[0];
+         speechText = 'Fall Commencement is ' + fallDropDate[0];
+         displayText = 'Commencement is ' + fallDropDate[0];
      } else {
       //ask for required input
       return handlerInput.responseBuilder
