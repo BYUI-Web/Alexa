@@ -164,13 +164,13 @@ const HousingHandler = {
 
     if (maritalStatus === 'single') {
       //perfrom operation for single
-      speechText = 'Well if you are single, there are pleanty of fish in the sea. However, you can search for approved housing at www.byui.edu/housing';
+      speechText = 'You can search for approved housing at www.byui.edu/housing';
       displayText = 'go to www.byui.edu/housing';
     }
      else if (maritalStatus === 'married') {
       //perform logic for married
-      speechText = 'Congratulations! you got married! I gess thats why they call it BYU I Do! Anyways, since you are married you don\'t need to worry about approved housing.';
-      displayText = 'you don\'t need to worry about approved housing.';
+      speechText = 'Since you are married you don\'t need to worry about approved housing.';
+      displayText = 'You don\'t need to worry about approved housing.';
     } else {
       //ask for the required input
       return handlerInput.responseBuilder
