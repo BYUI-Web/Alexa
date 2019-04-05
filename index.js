@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
     let speechText = "Welcome to BYU Idaho's personal assistant. I can help you find basic information \
                       about campus, your classes, or activities. What would you like me to help you with?";
     //welcome screeen message
-    let displayText = ""
+    let displayText = "I'm your personal assistant for BYU-Idaho"
     return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
@@ -37,8 +37,8 @@ const ERefundHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent'
   },
   handle(handlerInput) {
-    let speechText = '';
-    let displayText = '';
+    let speechText = 'You can find out all the information you need on the financial aid website.';
+    let displayText = 'www.byui.edu/financial-services';
     let intent = handlerInput.requestEnvelope.request.intent;
     //there are no slots for this handler.
     return handlerInput.responseBuilder
