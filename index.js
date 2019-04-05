@@ -1,7 +1,7 @@
 'use strict';
 
 //version number
-let version = '1.2 Alpha';
+let version = '1.4 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
@@ -62,7 +62,7 @@ const RegistrationDateHandler = {
     let Semester = intnet.slots.Semester.value;
     let SemesterType = intent.slots.Semester.value;
 
-
+    let date = '2019';
     let winterregistrationDeadlines = ["January 14", "March 6"];
     let springRegistrationDeadlines = ["April 29", "June 13"];
     let summerRegistrationDeadlines = ["August 5"];
@@ -72,17 +72,17 @@ const RegistrationDateHandler = {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        speechText = 'For winter Semester the registration deadline is ' + winterregistrationDeadlines[0];
+        speechText = 'For winter ' + date + ' Semester the registration deadline is ' + winterregistrationDeadlines[0];
         displayText = 'Registration deadline is ' + winterregistrationDeadlines[0];
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        speechText = 'The First Block of winter Semester registation deadline is ' + winterregistrationDeadlines[0];
+        speechText = 'The First Block of winter ' + date + ' Semester registation deadline is ' + winterregistrationDeadlines[0];
         displayText = 'The First Block registation deadline is ' + winterregistrationDeadlines[0];
       }
       else if (SemesterType === 'Second Block') {
         //logic for second Block
-      speechText = 'The second Block of winter Semester registration deadline is ' + winterregistrationDeadlines[1];
+      speechText = 'The second Block of winter ' + date + ' Semester registration deadline is ' + winterregistrationDeadlines[1];
       displayText = 'The Second Block registration deadline is ' + winterregistrationDeadlines[1];
     } else {
       return handlerInput.responseBuilder
@@ -94,17 +94,17 @@ const RegistrationDateHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For spring Semester the registration deadline is ' + springRegistrationDeadlines[0];
+         speechText = 'For spring ' + date + ' Semester the registration deadline is ' + springRegistrationDeadlines[0];
          displayText = 'Registration deadline is ' + springRegistrationDeadlines[0];
        }
        else if (SemesterType === 'First Block') {
          //logic for First Block
-         speechText = 'The First Block of spring Semester registation deadline is ' + springRegistrationDeadlines[0];
+         speechText = 'The First Block of spring ' + date + ' Semester registation deadline is ' + springRegistrationDeadlines[0];
          displayText = 'The First Block registation deadline is ' + springRegistrationDeadlines[0];
        }
        else if (SemesterType === 'second Block') {
          //logic for second Block
-       speechText = 'The second Block of spring Semester registration deadline is ' + springRegistrationDeadlines[1];
+       speechText = 'The second Block of spring ' + date + ' Semester registration deadline is ' + springRegistrationDeadlines[1];
        displayText = 'The Second Block registration deadline is ' + springRegistrationDeadlines[1];
      } else {
        return handlerInput.responseBuilder
@@ -116,7 +116,7 @@ const RegistrationDateHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For summer session the registration deadline is ' + summerRegistrationDeadlines[0];
+         speechText = 'For summer ' + date + ' session the registration deadline is ' + summerRegistrationDeadlines[0];
          displayText = 'Registration deadline is ' + summerRegistrationDeadlines;
        } else {
          return handlerInput.responseBuilder
@@ -128,17 +128,17 @@ const RegistrationDateHandler = {
       //logic for fall
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For fall Semester the registration deadline is ' + fallRegistrationDeadlines[0];
+         speechText = 'For fall ' + date + ' Semester the registration deadline is ' + fallRegistrationDeadlines[0];
          displayText = 'Registration deadline is ' + fallRegistrationDeadlines[0];
        }
        else if (SemesterType === 'First Block') {
          //logic for First Block
-         speechText = 'The First Block of fall Semester registation deadline is ' + fallRegistrationDeadlines[0];
+         speechText = 'The First Block of fall ' + date + ' Semester registation deadline is ' + fallRegistrationDeadlines[0];
          displayText = 'The First Block registation deadline is ' + fallRegistrationDeadlines[0];
        }
        else if (SemesterType === 'second Block') {
          //logic for second Block
-       speechText = 'The second Block of fall Semester registration deadline is ' + fallRegistrationDeadlines[1];
+       speechText = 'The second Block of fall ' + date + ' Semester registration deadline is ' + fallRegistrationDeadlines[1];
        displayText = 'The Second Block registration deadline is ' + fallRegistrationDeadlines[1];
      } else {
       //ask for required input
@@ -206,7 +206,7 @@ const MoveInDateHandler = {
     let Semester = intent.slots.Semester.value;
     let SemesterType = intent.slots.SemesterType.value;
 
-
+    let date = '2019';
     let winterMoveInDate = ['January 4', 'Febuary 26'];
     let springMoveInDate = ['April 19', 'June 5'];
     let summerMoveInDate = ['July 27'];
@@ -216,7 +216,7 @@ const MoveInDateHandler = {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        speechText = 'For winter Semester the move in date is ' + winterMoveInDate[0];
+        speechText = 'For winter ' + date + ' Semester the move in date is ' + winterMoveInDate[0];
         displayText = 'The move-in date is ' + winterMoveInDate[0];
       }
       else if (SemesterType === 'First Block') {
@@ -238,7 +238,7 @@ const MoveInDateHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For Spring Semester the move in date is ' + springMoveInDate[0];
+         speechText = 'For Spring ' + date + ' Semester the move in date is ' + springMoveInDate[0];
          displayText = 'The move-in date is ' + springMoveInDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -260,7 +260,7 @@ const MoveInDateHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For summer session move in date is ' + summerMoveInDate[0];
+         speechText = 'For summer ' + date + ' session move in date is ' + summerMoveInDate[0];
          displayText = 'The move-in date is ' + summerMoveInDate[0];
        } else {
          return handlerInput.responseBuilder
@@ -272,7 +272,7 @@ const MoveInDateHandler = {
       //logic for fall
        if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For fall Semester the move in date is ' + fallMoveInDate[0];
+         speechText = 'For fall ' + date + ' Semester the move in date is ' + fallMoveInDate[0];
          displayText = 'The move-in date is ' + fallMoveInDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -303,7 +303,7 @@ const FirstDayOfClassHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
 
-
+    let date = '2019';
     let winterFirstDay = ['January 7', 'Febuary 27'];
     let springFirstDay = ['April 22', 'June 6'];
     let summerFirstDay = ['July 29'];
@@ -312,7 +312,7 @@ const FirstDayOfClassHandler = {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        speechText = 'For winter Semester the First day of classes is ' + winterFirstDay[0];
+        speechText = 'For winter ' + date + ' Semester the First day of classes is ' + winterFirstDay[0];
         displayText = 'The First day of classes begin ' + winterFirstDay[0];
       }
       else if (SemesterType === 'First Block') {
@@ -334,7 +334,7 @@ const FirstDayOfClassHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For Spring Semester First day of classes is ' + springFirstDay[0];
+         speechText = 'For Spring ' + date + ' Semester First day of classes is ' + springFirstDay[0];
          displayText = 'The First day of classes begin ' + springFirstDay[0];
        }
        else if (SemesterType === 'First Block') {
@@ -356,7 +356,7 @@ const FirstDayOfClassHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For summer session classes begin ' + summerFirstDay[0];
+         speechText = 'For summer ' + date + ' session classes begin ' + summerFirstDay[0];
          displayText = 'The First day of classes begin ' + summerFirstDay[0];
        } else {
          return handlerInput.responseBuilder
@@ -368,7 +368,7 @@ const FirstDayOfClassHandler = {
       //logic for fall
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For fall Semester classes begin ' + fallFirstDay[0];
+         speechText = 'For fall ' + date + ' Semester classes begin ' + fallFirstDay[0];
          displayText = 'The First day of classes begin ' + fallFirstDay[0];
        }
        else if (SemesterType === 'First Block') {
@@ -399,6 +399,7 @@ const DropClassDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
 
+    let date = '2019';
     let winterDropDate = ['January 29', 'January 22', 'March 14'];
     let springDropDate = ['May 14', 'May 7', 'June 21'];
     let summerDropDate = ['Aug 13'];
@@ -408,7 +409,7 @@ const DropClassDateHandler = {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        speechText = 'For winter Semester deadline to drop classes is ' + winterDropDate[0];
+        speechText = 'For winter ' + date + ' Semester deadline to drop classes is ' + winterDropDate[0];
         displayText = 'The deadline to drop classes is ' + winterDropDate[0];
       }
       else if (SemesterType === 'First Block') {
@@ -430,7 +431,7 @@ const DropClassDateHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For Spring Semester deadline to drop classes is ' + springDropDate[0];
+         speechText = 'For Spring ' + date + ' Semester deadline to drop classes is ' + springDropDate[0];
          displayText = 'The deadline to drop classes is ' + springDropDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -452,7 +453,7 @@ const DropClassDateHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For summer session deadline to drop classes is ' + summerDropDate[0];
+         speechText = 'For summer ' + date + ' session deadline to drop classes is ' + summerDropDate[0];
          displayText = 'The deadline to drop classes is ' + summerDropDate[0];
        } else {
          return handlerInput.responseBuilder
@@ -464,7 +465,7 @@ const DropClassDateHandler = {
       //logic for fall
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For fall Semester deadline to drop classes is ' + fallDropDate[0];
+         speechText = 'For fall ' + date + ' Semester deadline to drop classes is ' + fallDropDate[0];
          displayText = 'The deadline to drop classes is ' + fallDropDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -495,6 +496,7 @@ const WithdrawDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
 
+    let date = '2019';
     let winterWithdrawDate = ['March 4', 'Febuary 4', 'March 25'];
     let springWithdrawDate = ['June 17', 'May 22', 'July 2'];
     let summerWithdrawDate = ['August 26'];
@@ -504,7 +506,7 @@ const WithdrawDateHandler = {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        speechText = 'For winter Semester deadline to withdraw from classes is ' + winterWithdrawDate[0];
+        speechText = 'For winter ' + date + ' Semester deadline to withdraw from classes is ' + winterWithdrawDate[0];
         displayText = 'The deadline to withdraw from classes is ' + winterWithdrawDate[0];
       }
       else if (SemesterType === 'First Block') {
@@ -526,7 +528,7 @@ const WithdrawDateHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For Spring Semester deadline to withdraw from classes is ' + springWithdrawDate[0];
+         speechText = 'For Spring ' + date + ' Semester deadline to withdraw from classes is ' + springWithdrawDate[0];
          displayText = 'The deadline to withdraw from classes is ' + springWithdrawDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -548,7 +550,7 @@ const WithdrawDateHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For summer session deadline to withdraw from classes is ' + summerWithdrawDate[0];
+         speechText = 'For summer ' + date + ' session deadline to withdraw from classes is ' + summerWithdrawDate[0];
          displayText = 'The deadline to withdraw from classes is ' + summerWithdrawDate[0];
        } else {
          return handlerInput.responseBuilder
@@ -560,7 +562,7 @@ const WithdrawDateHandler = {
       //logic for fall
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         speechText = 'For fall Semester deadline to withdraw from classes is ' + fallWithdrawDate[0];
+         speechText = 'For fall ' + date + ' Semester deadline to withdraw from classes is ' + fallWithdrawDate[0];
          displayText = 'The deadline to withdraw from classes is ' + fallWithdrawDate[0];
        }
        else if (SemesterType === 'First Block') {
@@ -591,23 +593,24 @@ const GraduationDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
 
+    let date = '2019';
     let winterGradDate = ['April 12'];
     let springGradDate = ['July 23'];
     let fallGradDate = ['December 18'];
     if (Semester === 'winter') {
 //logic for winter
-        speechText = 'Winter graduation is ' + winterGradDate[0];
+        speechText = 'Winter ' + date + ' graduation is ' + winterGradDate[0];
         displayText = 'Graduation is ' + winterGradDate[0];
     } 
     else if (Semester === 'spring') {
 //logic for Spring
-         speechText = 'Spring graduation is ' + springGradDate[0];
+         speechText = 'Spring ' + date + ' graduation is ' + springGradDate[0];
          displayText = 'Graduation is ' + springGradDate[0];
 
      }
     else if (Semester === 'fall') {
       //logic for fall
-         speechText = 'Fall graduation is ' + fallGradDate[0];
+         speechText = 'Fall ' + date + ' graduation is ' + fallGradDate[0];
          displayText = 'Graduation is ' + fallGradDate[0];
      } else {
       //ask for required input
@@ -629,29 +632,29 @@ const CommencementDateHandler = {
     let displayText = '';
     let intent = handlerInput.requestEnvelope.request.intent;
 
+    let date = '2019';
     let winterCommDate = ['April 12'];
     let springCommDate = ['July 23'];
-    let summerCommDate = [''];
     let fallCommDate = ['December 18'];
     if (Semester === 'winter') {
 //logic for winter
-        speechText = 'Winter commencement is ' + winterCommDate[0];
-        displayText = 'Commencement is ' + winterDropDate[0];
+        speechText = 'Winter ' + date + ' commencement is ' + winterCommDate[0];
+        displayText = 'Commencement ' + date + ' is ' + winterCommDate[0];
     } 
     else if (Semester === 'spring') {
 //logic for Spring
-         speechText = 'Spring Commencement is ' + springDropDate[0];
-         displayText = 'Commencement is ' + springDropDate[0];
+         speechText = 'Spring ' + date + ' Commencement is ' + springCommDate[0];
+         displayText = 'Commencement ' + date + ' is ' + springCommDate[0];
      }
     else if (Semester === 'summer'){
       //logic for Summer
-         speechText = 'Summer session does not have a Commencement ceremony.';
-         displayText = 'Summer session does not have a Commencement ceremony.';
+         speechText = 'Summer ' + date + ' session does not have a Commencement ceremony.';
+         displayText = 'Summer ' + date + ' session does not have a Commencement ceremony.';
        } 
     else if (Semester === 'fall') {
       //logic for fall
-         speechText = 'Fall Commencement is ' + fallDropDate[0];
-         displayText = 'Commencement is ' + fallDropDate[0];
+         speechText = 'Fall ' + date + ' Commencement is ' + fallCommDate[0];
+         displayText = 'Commencement ' + date + ' is ' + fallCommDate[0];
      } else {
       //ask for required input
       return handlerInput.responseBuilder
