@@ -1,7 +1,7 @@
 'use strict';
 
 //version number
-let version = '1.7 Beta';
+let version = '1.8 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
     let speechText = "Welcome to BYU Idaho's personal assistant. I can help you find basic information \
                       about campus, your classes, or activities. What would you like me to help you with?";
     //welcome screeen message
-    let displayText = "I'm your personal assistant for BYU-Idaho"
+    let displayText = "I'm your personal assistant for BYU-Idaho";
     return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
@@ -34,7 +34,7 @@ const LaunchRequestHandler = {
 const ERefundHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent';
   },
   handle(handlerInput) {
     let speechText = 'You can find out all the information you need on the financial aid website.';
@@ -53,13 +53,13 @@ const ERefundHandler = {
 const RegistrationDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'RegistrationIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'RegistrationIntent';
   },
   handle(handlerInput) {
 
     let intent = handlerInput.requestEnvelope.request.intent;
     let Semester = intnet.slots.Semester.value;
-    let SemesterType = intent.slots.Semester.value;
+    let SemesterType = intent.slots.SemesterType.value;
 
     let date = '2019';
     let winterregistrationDeadlines = ["January 14", "March 6"];
@@ -218,7 +218,7 @@ const RegistrationDateHandler = {
 const HousingHandler = {
   canHandle(hanlderInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'HousingIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'HousingIntent';
   },
 
   handle(handlerInput) {
@@ -259,7 +259,7 @@ const HousingHandler = {
 const ActivitiesHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
 
   handle(handlerInput) {
@@ -280,7 +280,7 @@ const ActivitiesHandler = {
 const MoveInDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
@@ -442,10 +442,12 @@ const MoveInDateHandler = {
 const FirstDayOfClassHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
+    let Semester = intent.slots.Semester.value;
+    let SemesterType = intent.slots.SemesterType.value;
 
     let date = '2019';
     let winterFirstDay = ['January 7', 'Febuary 27'];
@@ -519,8 +521,8 @@ const FirstDayOfClassHandler = {
        }
        else if (SemesterType === 'second Block') {
          //logic for second Block
-       let speechText = 'Second Block classes begin ' + springMoveInDate[1];
-       let displayText = 'The First day of classes begin ' + springMoveInDate[1];
+       let speechText = 'Second Block classes begin ' + springFirstDay[1];
+       let displayText = 'The First day of classes begin ' + springFirstDay[1];
 
        return handlerInput.responseBuilder
         .speak(speechText)
@@ -601,10 +603,12 @@ const FirstDayOfClassHandler = {
 const DropClassDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
+    let Semester = intent.slots.Semester.value;
+    let SemesterType = intent.slots.SemesterType.value;
 
     let date = '2019';
     let winterDropDate = ['January 29', 'January 22', 'March 14'];
@@ -740,7 +744,7 @@ const DropClassDateHandler = {
        else if (SemesterType === 'second Block') {
          //logic for second Block
        let speechText = 'The second Block deadline to drop classes is ' + fallDropDate[2];
-       let displayText = 'The deadline to drop classes is ' + falldropdate[2];
+       let displayText = 'The deadline to drop classes is ' + fallDropDate[2];
 
        return handlerInput.responseBuilder
         .speak(speechText)
@@ -762,10 +766,12 @@ const DropClassDateHandler = {
 const WithdrawDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
+    let Semester = intent.slots.Semester.value;
+    let SemesterType = intent.slots.SemesterType.value;
 
     let date = '2019';
     let winterWithdrawDate = ['March 4', 'Febuary 4', 'March 25'];
@@ -923,10 +929,12 @@ const WithdrawDateHandler = {
 const GraduationDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
+    let Semester = intent.slots.Semester.value;
+    let SemesterType = intent.slots.SemesterType.value;
 
     let date = '2019';
     let winterGradDate = ['April 12'];
@@ -978,12 +986,12 @@ const GraduationDateHandler = {
 const CommencementDateHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
-    let speechText = '';
-    let displayText = '';
     let intent = handlerInput.requestEnvelope.request.intent;
+    let Semester = intent.slots.Semester.value;
+    
 
     let date = '2019';
     let winterCommDate = ['April 12'];
@@ -1047,12 +1055,18 @@ const CommencementDateHandler = {
 const HowToRegisterHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
-        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent'
+        && handlerInput.requestEnvelope.request.intent.name === 'ActivitiesIntent';
   },
   handle(handlerInput) {
     let speechText = 'You can register for classes, depending on your credit count, in your my byui portal under the student tab.';
     let displayText = 'go to my.byui.edu, log in, and access the student tab.';
     let intent = handlerInput.requestEnvelope.request.intent;
+    
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .withSimpleCard(appName, displayText)
+        .withShouldEndSession(true)
+        .getResponse();
   }
 };
 //end custom handlers
