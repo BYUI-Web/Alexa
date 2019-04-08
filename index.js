@@ -1,7 +1,7 @@
 'use strict';
 
 //version number
-let version = '1.8 Beta';
+let version = '1.9 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
@@ -216,7 +216,7 @@ const RegistrationDateHandler = {
 
 //Checked for bracket inconsistencies
 const HousingHandler = {
-  canHandle(hanlderInput) {
+  canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentHandler'
         && handlerInput.requestEnvelope.request.intent.name === 'HousingIntent';
   },
@@ -934,7 +934,7 @@ const GraduationDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
     let Semester = intent.slots.Semester.value;
-    
+
     let date = '2019';
     let winterGradDate = ['April 12'];
     let springGradDate = ['July 23'];
