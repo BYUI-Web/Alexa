@@ -1,7 +1,7 @@
 'use strict';
 
 //version number
-let version = '1.4 Beta';
+let version = '1.7 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
@@ -66,6 +66,7 @@ const RegistrationDateHandler = {
     let springRegistrationDeadlines = ["April 29", "June 13"];
     let summerRegistrationDeadlines = ["August 5"];
     let fallRegistrationDeadlines = ["September 23", "November 6"];
+    
     //logic for this handler
     if (Semester === 'winter') {
 //logic for winter
