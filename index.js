@@ -934,8 +934,7 @@ const GraduationDateHandler = {
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
     let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
-
+    
     let date = '2019';
     let winterGradDate = ['April 12'];
     let springGradDate = ['July 23'];
