@@ -64,18 +64,21 @@ const RegistrationDateHandler = {
     let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
-    let winterregistrationDeadlines = ["January 14", "March 6"];
-    let springRegistrationDeadlines = ["April 29", "June 13"];
-    let summerRegistrationDeadlines = ["August 5"];
-    let fallRegistrationDeadlines = ["September 23", "November 6"];
+    let winterregistrationDeadlinesFirst = 'January 14'; 
+    let winterregistrationDeadlinesSecond = "March 6";
+    let springRegistrationDeadlinesFirst = "April 29";
+    let springRegistrationDeadlinesSecond = "June 13";
+    let summerRegistrationDeadlines = "August 5";
+    let fallRegistrationDeadlinesFirst = "September 23";
+    let fallRegistrationDeadlinesSecond = "November 6";
     
     //logic for this handler
     if (Semester === 'winter') {
 //logic for winter
      if (SemesterType === 'Full Semester') {
         //logic for Full Semester
-        let speechText = 'For winter ' + date + ' Semester the registration deadline is ' + winterregistrationDeadlines[0];
-        let displayText = 'Registration deadline is ' + winterregistrationDeadlines[0];
+        let speechText = 'For winter ' + date + ' Semester the registration deadline is ' + winterregistrationDeadlinesFirst;
+        let displayText = 'Registration deadline is ' + winterregistrationDeadlinesFirst;
 
         return handlerInput.responseBuilder
         .speak(speechText)
@@ -85,8 +88,8 @@ const RegistrationDateHandler = {
       }
       else if (SemesterType === 'First Block') {
         //logic for First Block
-        let speechText = 'The First Block of winter ' + date + ' Semester registation deadline is ' + winterregistrationDeadlines[0];
-        let displayText = 'The First Block registation deadline is ' + winterregistrationDeadlines[0];
+        let speechText = 'The First Block of winter ' + date + ' Semester registation deadline is ' + winterregistrationDeadlinesFirst;
+        let displayText = 'The First Block registation deadline is ' + winterregistrationDeadlinesFirst;
 
         return handlerInput.responseBuilder
         .speak(speechText)
@@ -96,8 +99,8 @@ const RegistrationDateHandler = {
       }
       else if (SemesterType === 'Second Block') {
         //logic for second Block
-      let speechText = 'The second Block of winter ' + date + ' Semester registration deadline is ' + winterregistrationDeadlines[1];
-      let displayText = 'The Second Block registration deadline is ' + winterregistrationDeadlines[1];
+      let speechText = 'The second Block of winter ' + date + ' Semester registration deadline is ' + winterregistrationDeadlinesSecond;
+      let displayText = 'The Second Block registration deadline is ' + winterregistrationDeadlinesSecond;
 
       return handlerInput.responseBuilder
         .speak(speechText)
@@ -115,8 +118,8 @@ const RegistrationDateHandler = {
 //logic for Spring
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         let speechText = 'For spring ' + date + ' Semester the registration deadline is ' + springRegistrationDeadlines[0];
-         let displayText = 'Registration deadline is ' + springRegistrationDeadlines[0];
+         let speechText = 'For spring ' + date + ' Semester the registration deadline is ' + springRegistrationDeadlinesFirst;
+         let displayText = 'Registration deadline is ' + springRegistrationDeadlinesFirst;
 
          return handlerInput.responseBuilder
         .speak(speechText)
@@ -126,8 +129,8 @@ const RegistrationDateHandler = {
        }
        else if (SemesterType === 'First Block') {
          //logic for First Block
-         let speechText = 'The First Block of spring ' + date + ' Semester registation deadline is ' + springRegistrationDeadlines[0];
-         let displayText = 'The First Block registation deadline is ' + springRegistrationDeadlines[0];
+         let speechText = 'The First Block of spring ' + date + ' Semester registation deadline is ' + springRegistrationDeadlinesFirst;
+         let displayText = 'The First Block registation deadline is ' + springRegistrationDeadlinesFirst;
 
          return handlerInput.responseBuilder
         .speak(speechText)
@@ -137,8 +140,8 @@ const RegistrationDateHandler = {
        }
        else if (SemesterType === 'second Block') {
          //logic for second Block
-       let speechText = 'The second Block of spring ' + date + ' Semester registration deadline is ' + springRegistrationDeadlines[1];
-       let displayText = 'The Second Block registration deadline is ' + springRegistrationDeadlines[1];
+       let speechText = 'The second Block of spring ' + date + ' Semester registration deadline is ' + springRegistrationDeadlinesSecond;
+       let displayText = 'The Second Block registration deadline is ' + springRegistrationDeadlinesSecond;
 
        return handlerInput.responseBuilder
         .speak(speechText)
@@ -156,7 +159,7 @@ const RegistrationDateHandler = {
       //logic for Summer
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         let speechText = 'For summer ' + date + ' session the registration deadline is ' + summerRegistrationDeadlines[0];
+         let speechText = 'For summer ' + date + ' session the registration deadline is ' + summerRegistrationDeadlines;
          let displayText = 'Registration deadline is ' + summerRegistrationDeadlines;
 
          return handlerInput.responseBuilder
@@ -175,8 +178,8 @@ const RegistrationDateHandler = {
       //logic for fall
       if (SemesterType === 'Full Semester') {
          //logic for Full Semester
-         let speechText = 'For fall ' + date + ' Semester the registration deadline is ' + fallRegistrationDeadlines[0];
-         let displayText = 'Registration deadline is ' + fallRegistrationDeadlines[0];
+         let speechText = 'For fall ' + date + ' Semester the registration deadline is ' + fallRegistrationDeadlinesFirst;
+         let displayText = 'Registration deadline is ' + fallRegistrationDeadlinesFirst;
 
          return handlerInput.responseBuilder
         .speak(speechText)
@@ -186,8 +189,8 @@ const RegistrationDateHandler = {
        }
        else if (SemesterType === 'First Block') {
          //logic for First Block
-         let speechText = 'The First Block of fall ' + date + ' Semester registation deadline is ' + fallRegistrationDeadlines[0];
-         let displayText = 'The First Block registation deadline is ' + fallRegistrationDeadlines[0];
+         let speechText = 'The First Block of fall ' + date + ' Semester registation deadline is ' + fallRegistrationDeadlinesFirst;
+         let displayText = 'The First Block registation deadline is ' + fallRegistrationDeadlinesFirst;
 
          return handlerInput.responseBuilder
         .speak(speechText)
@@ -197,8 +200,8 @@ const RegistrationDateHandler = {
        }
        else if (SemesterType === 'second Block') {
          //logic for second Block
-       let speechText = 'The second Block of fall ' + date + ' Semester registration deadline is ' + fallRegistrationDeadlines[1];
-       let displayText = 'The Second Block registration deadline is ' + fallRegistrationDeadlines[1];
+       let speechText = 'The second Block of fall ' + date + ' Semester registration deadline is ' + fallRegistrationDeadlinesSecond;
+       let displayText = 'The Second Block registration deadline is ' + fallRegistrationDeadlinesSecond;
 
        return handlerInput.responseBuilder
         .speak(speechText)
