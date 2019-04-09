@@ -263,7 +263,7 @@ const ActivitiesHandler = {
   },
 
   handle(handlerInput) {
-    let speechText = 'There are lots of activites that you can find at www.byui.edu/activities';
+    let speechText = 'There are lots of activities that you can find at www.byui.edu/activities';
     let displayText = 'look up www.byui.edu/activities';
     let intent = handlerInput.requestEnvelope.request.intent;
 
