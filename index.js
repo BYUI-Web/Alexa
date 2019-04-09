@@ -5,6 +5,8 @@ let version = '1.9 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
+//import ask-sdk-runtime
+const Runtime = require('ask-sdk-runtime');
 
 //skill name 
 const appName = 'BYU Idaho';
