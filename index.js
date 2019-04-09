@@ -58,8 +58,8 @@ const RegistrationDateHandler = {
   handle(handlerInput) {
 
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intnet.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+    let Semester = intnet.slots.semester.value;
+    let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
     let winterregistrationDeadlines = ["January 14", "March 6"];
@@ -284,8 +284,8 @@ const MoveInDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+    let Semester = intent.slots.semester.value;
+    let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
     let winterMoveInDate = ['January 4', 'Febuary 26'];
@@ -446,8 +446,8 @@ const FirstDayOfClassHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+    let Semester = intent.slots.semester.value;
+    let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
     let winterFirstDay = ['January 7', 'Febuary 27'];
@@ -607,8 +607,8 @@ const DropClassDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+    let Semester = intent.slots.semester.value;
+    let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
     let winterDropDate = ['January 29', 'January 22', 'March 14'];
@@ -770,8 +770,8 @@ const WithdrawDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
-    let SemesterType = intent.slots.SemesterType.value;
+    let Semester = intent.slots.semester.value;
+    let SemesterType = intent.slots.semesterType.value;
 
     let date = '2019';
     let winterWithdrawDate = ['March 4', 'Febuary 4', 'March 25'];
@@ -933,7 +933,7 @@ const GraduationDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
+    let Semester = intent.slots.semester.value;
 
     let date = '2019';
     let winterGradDate = ['April 12'];
@@ -989,7 +989,7 @@ const CommencementDateHandler = {
   },
   handle(handlerInput) {
     let intent = handlerInput.requestEnvelope.request.intent;
-    let Semester = intent.slots.Semester.value;
+    let Semester = intent.slots.semester.value;
     
 
     let date = '2019';
