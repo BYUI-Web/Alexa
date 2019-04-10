@@ -1,7 +1,7 @@
 'use strict';
 
 //version number
-let version = '1.9 Beta';
+let version = '1.0.1 Beta';
 
 //import ask-sdk-core
 const Alexa = require('ask-sdk-core');
