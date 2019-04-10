@@ -39,9 +39,9 @@ const ERefundHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'ErefundIntent';
   },
   handle(handlerInput) {
-    let speechText = 'You can find out all the information you need on the financial aid website.';
-    let displayText = 'www.byui.edu/financial-services';
-    let intent = handlerInput.requestEnvelope.request.intent;
+    let speechText = "You can find out all the information you need on the financial aid website.";
+    let displayText = "www.byui.edu/financial-services";
+
     //there are no slots for this handler.
     return handlerInput.responseBuilder
         .speak(speechText)
