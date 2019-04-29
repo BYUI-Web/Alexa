@@ -11,8 +11,6 @@ const Runtime = require('ask-sdk-runtime');
 //skill name 
 const appName = 'BYU Idaho';
 
-// something
-
 //code for intent handlers
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
