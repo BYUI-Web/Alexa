@@ -42,7 +42,7 @@ When am I able to register for classes
 Do I need approved housing
 Where can I find approved housing
 What apartments are approved housing
-# Move in Date - Coming in the second release (in development)
+### Move in Date - Coming in the second release (in development)
 When is the move in date for {Semester}
 What day do I move in
 When can I move in
