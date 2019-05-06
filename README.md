@@ -27,48 +27,48 @@ and forecasted outcomes.
 ## Current Voice Interactions
 
 ### eRefund
-Can I candel my eRefund
-Do I have to use eRefund
-how do I get my Federal Aid
-How do I sign up for eRefund
-When will I get my eRefund
+* Can I candel my eRefund
+* Do I have to use eRefund
+* how do I get my Federal Aid
+* How do I sign up for eRefund
+* When will I get my eRefund
 ### Registration Date - Coming in the second release
-When is {Semester} registration
-When is registration for {Semester} semester
-When is registration for {Semester}
-When is my registration date
-When am I able to register for classes
+* When is {Semester} registration
+* When is registration for {Semester} semester
+* When is registration for {Semester}
+* When is my registration date
+* When am I able to register for classes
 ### Student Housing
-Do I need approved housing
-Where can I find approved housing
-What apartments are approved housing
+* Do I need approved housing
+* Where can I find approved housing
+* What apartments are approved housing
 ### Move in Date - Coming in the second release (in development)
-When is the move in date for {Semester}
-What day do I move in
-When can I move in
-When is the move in date
-When is the first day to move in
+* When is the move in date for {Semester}
+* What day do I move in
+* When can I move in
+* When is the move in date
+* When is the first day to move in
 ### First Day of Classes - Coming in the second release (in development) 
-When is the first day of class in {Semester} semester
-When is the first day of {Semester} classes
-What date do classes start
-When is the first day of class
+* When is the first day of class in {Semester} semester
+* When is the first day of {Semester} classes
+* What date do classes start
+* When is the first day of class
 ### Drop Date - Coming in the second release (in development)
-When is the {Semester} drop date
-What is the drop date
-When can I drop a class
-When is the last day to drop a class
+* When is the {Semester} drop date
+* What is the drop date
+* When can I drop a class
+* When is the last day to drop a class
 ### Withdrawl Date - Coming in the second release (in development)
-When is the {Semester} drop date
-When is the withdrawl date
-Can I withdraw
-When is my last day to withdraw from classes
-Can I withdraw from classes
+* When is the {Semester} drop date
+* When is the withdrawl date
+* Can I withdraw
+* When is my last day to withdraw from classes
+* Can I withdraw from classes
 ### Graduation Date
-When is {Semester} graduation
-When is the graduation date
-When is graduation
+* When is {Semester} graduation
+* When is the graduation date
+* When is graduation
 ### Commencement Date
-When is {Semester} commencement
-What day is commencement
-When is commencement
+* When is {Semester} commencement
+* What day is commencement
+* When is commencement
